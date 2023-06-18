@@ -6,18 +6,34 @@ const AddBook = (props) => {
         title: "",
         author: "",
         page: 20,
-        digitalAvailability: false,
         description: "",
+        digitalAvailability: false,
     });
     const [errors, setErrors] = useState({});
 
     const changeHandler = (e) => {
-        //
+        // Need 'if' part to handle true/false checkbox
+        if (e.target.name === "digitalAvailability") {
+            setBook({
+                ...book,
+                digitalAvailability: !book.digitalAvailability,
+            });
+        } else {
+            setBook({ ...book, [e.target.name]: e.target.value });
+        }
     };
 
     const submitHandler = (e) => {
         e.preventDefault();
-        //
+        axios
+            .post("http://localhost:8000/api/addBook", book)
+            .then((resp) => {
+                console.log(resp);
+            })
+            .catch((err) => {
+                console.log(err.response.data.errors);
+                setErrors(err.response.data.errors);
+            });
     };
 
     return (
@@ -81,7 +97,7 @@ const AddBook = (props) => {
                         onChange={changeHandler}
                         value={book.digitalAvailability}
                     />
-                    {errors.description ? (
+                    {errors.digitalAvailability ? (
                         <p className="text-danger">
                             {errors.digitalAvailability.message}
                         </p>
