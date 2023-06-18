@@ -1,10 +1,18 @@
-const BookModel = new mongoose.Schma(
+const mongoose = require("mongoose");
+
+const BookModel = new mongoose.Schema(
     {
         title: {
             type: String,
             required: [true, "Title is required"],
             minLength: [2, "The title must be at least 2 characters"],
             maxLength: [50, "The title can not exceed 50 characters"],
+        },
+        author: {
+            type: String,
+            required: [true, "The author name is required"],
+            minLength: [2, "The author name must be at least 2 characters"],
+            maxLength: [50, "The author name can not exceed 50 characters"],
         },
         page: {
             type: Number,
@@ -16,7 +24,8 @@ const BookModel = new mongoose.Schma(
             },
         },
         digitalAvailability: {
-            tybe: Boolean,
+            type: Boolean,
+            // required: [true, "Please select one"],
         },
         description: {
             type: String,
@@ -29,4 +38,5 @@ const BookModel = new mongoose.Schma(
 );
 
 const Book = mongoose.model("Book", BookModel);
+
 module.exports = Book;
