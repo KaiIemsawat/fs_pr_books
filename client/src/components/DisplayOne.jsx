@@ -32,22 +32,10 @@ const DisplayOne = (props) => {
     return (
         <div>
             <h3>Book's Details</h3>
-            <p>
-                <span style={{ fontWeight: "bold" }}>Title : </span>
-                {oneBook.title}
-            </p>
-            <p>
-                <span style={{ fontWeight: "bold" }}>Author : </span>
-                {oneBook.author}
-            </p>
-            <p>
-                <span style={{ fontWeight: "bold" }}>Page : </span>
-                {oneBook.page}
-            </p>
-            <p>
-                <span style={{ fontWeight: "bold" }}>Description : </span>
-                {oneBook.description}
-            </p>
+            <p><span style={{ fontWeight: "bold" }}>Title : </span>{oneBook.title}</p>
+            <p><span style={{ fontWeight: "bold" }}>Author : </span>{oneBook.author}</p>
+            <p><span style={{ fontWeight: "bold" }}>Page : </span>{oneBook.page}</p>
+            <p><span style={{ fontWeight: "bold" }}>Description : </span>{oneBook.description}</p>
             <p>
                 <span style={{ fontWeight: "bold" }}>Digital Media : </span>
                 {oneBook.digitalAvailability ? (
@@ -57,11 +45,7 @@ const DisplayOne = (props) => {
                 )}
             </p>
             <br />
-            <button
-                className="btn btn-danger"
-                onClick={() => deleteHandler(oneBook._id)}>
-                Delete
-            </button>
+            <button className="btn btn-danger" onClick={() => deleteHandler(oneBook._id)}>Delete</button>
         </div>
     );
 };
