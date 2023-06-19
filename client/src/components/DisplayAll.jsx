@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const DisplayAll = (props) => {
     const [allBooks, setAllBooks] = useState([]);
@@ -29,6 +30,7 @@ const DisplayAll = (props) => {
                     ) : (
                         <h2>Not available for Digital Book</h2>
                     )}
+                    <Link to={`displayOneBook/${eaBook._id}`}>Details</Link>
                 </div>
             ))}
         </div>
