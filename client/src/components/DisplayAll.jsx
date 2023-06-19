@@ -30,7 +30,9 @@ const DisplayAll = (props) => {
                     ) : (
                         <h2>Not available for Digital Book</h2>
                     )}
-                    <Link to={`displayOneBook/${eaBook._id}`}>Details</Link>
+                    <Link to={`/displayOneBook/${eaBook._id}`}>Details</Link>
+                    <br />
+                    <Link to={`/editBook/${eaBook._id}`}>Edit</Link>
                 </div>
             ))}
         </div>

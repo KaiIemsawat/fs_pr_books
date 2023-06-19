@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Navigator from "./components/Navigator";
 import AddBook from "./components/AddBook";
 import DisplayOne from "./components/DisplayOne";
+import EditBook from "./components/EditBook";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                     <Route path="/" element={<DisplayAll />} />
                     <Route path="/addBook/form" element={<AddBook />} />
                     <Route path="/displayOneBook/:id" element={<DisplayOne />} />
+                    <Route path="/editBook/:id" element={<EditBook/>}/>
                 </Routes>
             </BrowserRouter>
         </div>

@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { useParams, useNavigate } from "react-router-dom";
 
 const DisplayOne = (props) => {
@@ -32,6 +31,7 @@ const DisplayOne = (props) => {
 
     return (
         <div>
+            <h3>Book's Details</h3>
             <p>
                 <span style={{ fontWeight: "bold" }}>Title : </span>
                 {oneBook.title}
